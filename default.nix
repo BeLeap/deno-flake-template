@@ -10,12 +10,6 @@ pkgs.stdenv.mkDerivation {
     deno
   ];
 
-  configurePhase = ''
-    export DENO_DIR=$TMP/deno
-    deno install --entrypoint $src/main.ts
-    deno compile https://docs.deno.com/examples/welcome.ts
-  '';
-
   buildPhase = ''
     DENO_DIR=$TMP/deno deno compile -A -o example $src/main.ts
   '';
