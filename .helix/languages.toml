@@ -1,0 +1,11 @@
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
+
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["deno-lsp"]
